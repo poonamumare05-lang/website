@@ -17,13 +17,16 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying rapido application'
+                echo 'Deploying Rapido application'
 
                 sh '''
-                    sudo rm -rf /var/www/html/*
-                    sudo cp -r * /var/www/html/
+                    sudo -n /usr/bin/rm -f /var/www/html/index.html
+                    sudo -n /usr/bin/cp index.html /var/www/html/index.html
                 '''
+
+                echo 'Deployment completed!'
             }
         }
     }
 }
+
