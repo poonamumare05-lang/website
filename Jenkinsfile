@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -16,12 +17,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying Zoom application'
+                echo 'Deploying rapido application'
 
                 sh '''
-                    rm -rf /var/www/html/*
-                    cp -r * /var/www/html/
+                    sudo rm -rf /var/www/html/*
+                    sudo cp -r * /var/www/html/
                 '''
             }
         }
     }
+}
